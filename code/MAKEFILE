@@ -1,0 +1,14 @@
+G++FLAGS = -g 
+LINKFLAGS = -g
+
+.SUFFIXES: .cc .o
+
+ALL     =  vr.o
+
+.cc.o:  
+	g++ $(G++FLAGS) -c  $<
+
+vr:   $(ALL)
+	g++ -o $@  $(LINKFLAGS) $(ALL) -lm
+	@echo "	------- Fini -------"
+
